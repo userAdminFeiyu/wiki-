@@ -1,6 +1,7 @@
 package com.example.wiki.controller;
 
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,13 +9,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TestController {
 
+    @Value("${test.hello}")
+    private String testHello;
+
 
     //405 请求方式不支持
     //404 请求访问不到
     @GetMapping("/hello")
 //    @RequestMapping("/hello") //表示支持所有的请求方式
     public String hello() {
-        return "hello world";
+        return "hello world" + testHello;
     }
 
     @PostMapping("/hello/post/")
