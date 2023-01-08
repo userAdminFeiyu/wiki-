@@ -3,3 +3,11 @@ server:
 
 test:
   hello: hello-world
+
+# 增加数据库连接
+spring:
+  datasource:
+    username: wiki
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/wiki?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimeZone=Asia/Shanghai
